@@ -1,6 +1,7 @@
 # \<Terminal /\>
-
-[NO LONGER MAINTAINED] ReactBash is a configurable / extendable bash terminal component. It provides an easy way of adding a terminal to your application. The terminal has a few built in base commands, and allows a simple means of extending the understandable commands. It boasts things like autocomplete on tab, previous command navigation, and a test suite you can trust. It is easy to install and get started.
+ Forked from http://zackargyle.github.io/react-bash/
+ Custome version with resizable terminal, custom top panel behaviour and new structure function.
+ ReactBash is a configurable / extendable bash terminal component. It provides an easy way of adding a terminal to your application. The terminal has a few built in base commands, and allows a simple means of extending the understandable commands. It boasts things like autocomplete on tab, previous command navigation, and a test suite you can trust. It is easy to install and get started.
 
 ```
 npm install --save react-bash
@@ -13,6 +14,7 @@ Try out the [DEMO](http://zackargyle.github.io/react-bash/)
 ### Props
 prop         | description
 ------------ | -----------
+`panel`      | True/False: add/remove top panel
 `extensions` | An object of bash command extensions
 `history`    | An array of initial history items
 `structure`  | An object representing the file system
