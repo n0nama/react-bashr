@@ -34,5 +34,5 @@ const structure = {
     'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
 };
 
-const Root = <Terminal history={history} structure={structure} extensions={extensions} />;
+const Root = <Terminal panel={false} history={history} structure={structure} extensions={extensions} />;
 ReactDOM.render(Root, document.getElementById('app'));

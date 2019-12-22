@@ -142,17 +142,19 @@ export default class Terminal extends Component {
     }
 
     render() {
-        const { onClose, onExpand, onMinimize, prefix, styles, theme } = this.props;
+        const { panel, onClose, onExpand, onMinimize, prefix, styles, theme } = this.props;
         const { history, cwd } = this.state;
         const style = Object.assign({}, Styles[theme] || Styles.light, styles);
         return (
             <div className="ReactBash" style={style.ReactBash}>
-                <div style={style.header}>
-                    <span style={style.redCircle} onClick={onClose}></span>
-                    <span style={style.yellowCircle} onClick={onMinimize}></span>
-                    <span style={style.greenCircle} onClick={onExpand}></span>
-                </div>
-                <div style={style.body} onClick={() => this.refs.input.focus()}>
+                {panel ?
+                    <div style={style.header}>
+                        <span style={style.redCircle} onClick={onClose}></span>
+                        <span style={style.yellowCircle} onClick={onMinimize}></span>
+                        <span style={style.greenCircle} onClick={onExpand}></span>
+                    </div>
+                :null}
+                <div style={panel ? style.bodyPanel : style.body} onClick={() => this.refs.input.focus()}>
                     {history.map(this.renderHistoryItem(style))}
                     <form onSubmit={evt => this.handleSubmit(evt)} style={style.form}>
                         <span style={style.prefix}>{`${prefix} ~${cwd} $`}</span>

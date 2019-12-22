@@ -1,19 +1,20 @@
 const BaseStyles = {};
 
 BaseStyles.ReactBash = {
-    borderRadius: '5px',
-    display: 'flex',
-    flexDirection: 'column',
+    position:'relative',
+    width:'100%',
+    height:'100%',
     fontFamily: '\'Inconsolata\', monospace',
     fontSize: '13px',
     fontWeight: '400',
     height: '100%',
-    overflow: 'hidden',
     textAlign: 'left',
 };
 
 BaseStyles.header = {
     padding: '5px 10px 0',
+    borderTopLeftRadius:'5px',
+    borderTopRightRadius:'5px'
 };
 
 const circle = {
@@ -37,10 +38,16 @@ BaseStyles.greenCircle = Object.assign({}, circle, {
 });
 
 BaseStyles.body = {
-    flexGrow: 1,
-    overflowY: 'scroll',
+    position:'absolute',
+    top:0,
+    bottom:0,
+    left:0,
+    right:0,
+    overflow: 'auto',
     padding: '10px',
 };
+
+BaseStyles.bodyPanel = Object.assign({}, BaseStyles.body, { top: '23px', borderBottomLeftRadius:'5px', borderBottomRightRadius:'5px' });
 
 BaseStyles.form = {
     display: 'flex',
@@ -67,6 +74,10 @@ export default {
             backgroundColor: '#fff',
             color: '#5D5D5D',
         }),
+        bodyPanel: Object.assign({}, BaseStyles.bodyPanel, {
+            backgroundColor: '#fff',
+            color: '#5D5D5D',
+        }),
         header: Object.assign({}, BaseStyles.header, {
             backgroundColor: '#eee',
         }),
@@ -76,6 +87,10 @@ export default {
     }),
     dark: Object.assign({}, BaseStyles, {
         body: Object.assign({}, BaseStyles.body, {
+            backgroundColor: '#000',
+            color: '#d0d0d0',
+        }),
+        bodyPanel: Object.assign({}, BaseStyles.bodyPanel, {
             backgroundColor: '#000',
             color: '#d0d0d0',
         }),
